@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <head>
+        <title>
+            Temprature Converter
+        </title> 
+        <link rel="stylesheet" href="style1.css" >
+    </head>
+   
+    <body>
+    <div class="container">
+        <div class="temperature-converter">
+           <div class="main-heading">
+               Temprature Converter
+           </div>
+        <br>
+           <div class="Celsius1">
+               <label>Degrees</lable>
+               <input type="number" placeholder="degrees" id="celsius-value">
+           </div>
+           <br>
+           <div class="Convert-type">
+            <label for="temp-type">Type</label>
+                <select name="Type" id="temp-type">
+                    <option id="fahrenheit" value="fahrenheit">Fahrenheit</option>
+                    <option id="kelvin" value="kelvin">Kelvin</option>
+                </select>
+            </div>
+            <br>
+                <input type="button" value="convert" id="convert-btn" onclick="convertion()">
+            <br>
+            <div class="result">
+                <label class="output">Celsius</label>
+                <br>
+                <h1 id="celsius"></h1>
+            </div>
+        </div>
+    </div>
+        <script>
+            function convertion(){
+
+            const tempType = document.querySelector("#temp-type");
+
+            let celsius=parseInt(document.getElementById("celsius-value").value);
+
+            if(tempType.value==="fahrenheit"){
+                fah=`${(celsius - 32) * (5 / 9) } &deg;c`;
+                document.getElementById("celsius").innerHTML=fah;
+            }else if (tempType.value==="kelvin"){
+                fah =`${celsius - 273.15} &deg;c` ;
+                document.getElementById("celsius").innerHTML=fah;
+            }
+
+            }
+            
+        </script>
+    </body>
+</HTML>
